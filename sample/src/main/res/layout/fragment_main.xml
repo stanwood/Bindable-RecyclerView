@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="io.stanwood.framework.bindablerecyclerview.sample.MainViewModel" />
+
+        <import type="android.support.v7.widget.LinearLayoutManager" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.RecyclerView
+            divider="@{LinearLayoutManager.VERTICAL}"
+            item_layout="@{@layout/item_sample}"
+            items="@{vm.items}"
+            orientation="@{LinearLayoutManager.VERTICAL}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </FrameLayout>
+
+</layout>
