@@ -14,14 +14,15 @@ object RecyclerViewBindingAdapters {
     }
 
     @JvmStatic
-    @BindingAdapter(value = ["items", "item_layout"], requireAll = true)
+    @BindingAdapter(value = ["items", "item_layout", "variable_id"], requireAll = true)
     fun setItems(
             recyclerView: RecyclerView,
             items: List<Any>,
-            @LayoutRes layoutResId: Int) {
+            @LayoutRes layoutResId: Int,
+            variableId: Int) {
         val adapter = recyclerView.adapter
         if (adapter == null) {
-            recyclerView.adapter = ViewModelAdapter(items, layoutResId, 1)
+            recyclerView.adapter = ViewModelAdapter(items, layoutResId, variableId)
         }
     }
 
