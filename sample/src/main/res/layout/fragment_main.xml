@@ -10,6 +10,7 @@
             type="io.stanwood.framework.bindablerecyclerview.sample.MainViewModel" />
 
         <import type="android.support.v7.widget.LinearLayoutManager" />
+        <import type="io.stanwood.framework.bindablerecyclerview.sample.BR"/>
     </data>
 
     <FrameLayout
@@ -22,6 +23,7 @@
             item_layout="@{@layout/item_sample}"
             items="@{vm.items}"
             orientation="@{LinearLayoutManager.VERTICAL}"
+            variable_id="@{BR.vm}"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </FrameLayout>
