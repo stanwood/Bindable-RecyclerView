@@ -16,7 +16,7 @@ object RecyclerViewBindingAdapters {
     @BindingAdapter(value = ["items"])
     fun setItems(
             recyclerView: RecyclerView,
-            items: BindableArrayList<Any>) {
+            items: BindableArrayList<*>) {
         val adapter = recyclerView.adapter
         if (adapter == null) {
             recyclerView.adapter = ViewModelAdapter(items, items.layoutResId, items.bindingVariableId)

@@ -4,6 +4,6 @@ import android.databinding.ObservableArrayList
 import android.support.annotation.LayoutRes
 
 
-class BindableArrayList<T>(
+class BindableArrayList<T: Any>(
         @LayoutRes val layoutResId: Int,
         val bindingVariableId: Int): ObservableArrayList<T>()
