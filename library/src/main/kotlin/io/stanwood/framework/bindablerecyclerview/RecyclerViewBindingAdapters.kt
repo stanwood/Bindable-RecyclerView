@@ -1,7 +1,6 @@
 package io.stanwood.framework.bindablerecyclerview
 
 import android.databinding.BindingAdapter
-import android.support.annotation.LayoutRes
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -14,14 +13,13 @@ object RecyclerViewBindingAdapters {
     }
 
     @JvmStatic
-    @BindingAdapter(value = ["items", "item_layout"], requireAll = true)
+    @BindingAdapter(value = ["items"])
     fun setItems(
             recyclerView: RecyclerView,
-            items: List<Any>,
-            @LayoutRes layoutResId: Int) {
+            items: BindableArrayList<Any>) {
         val adapter = recyclerView.adapter
         if (adapter == null) {
-            recyclerView.adapter = ViewModelAdapter(items, layoutResId, 1)
+            recyclerView.adapter = ViewModelAdapter(items, items.layoutResId, items.bindingVariableId)
         }
     }
 

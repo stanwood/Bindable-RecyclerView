@@ -19,7 +19,6 @@
 
         <android.support.v7.widget.RecyclerView
             divider="@{LinearLayoutManager.VERTICAL}"
-            item_layout="@{@layout/item_sample}"
             items="@{vm.items}"
             orientation="@{LinearLayoutManager.VERTICAL}"
             android:layout_width="match_parent"
